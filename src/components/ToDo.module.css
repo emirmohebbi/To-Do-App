@@ -1,0 +1,38 @@
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  margin: 50px 0;
+  color: rgb(252, 11, 3);
+}
+
+.container input {
+  width: 200px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+.add {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  padding: 0px 20px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  width: 400px;
+  height: 50px;
+  background-color: lightgray;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
