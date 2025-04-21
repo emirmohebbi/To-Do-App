@@ -1,21 +1,46 @@
+body {
+  background-color: #575757;
+}
+
 .container {
   text-align: center;
 }
 
 .container h1 {
   margin: 50px 0;
-  color: rgb(252, 11, 3);
+  color: #fffb03;
 }
 
 .container input {
+  padding-left: 10px;
   width: 200px;
   font-size: 1.1rem;
   border-radius: 5px;
 }
 .add {
+  background-color: #00ff08;
   margin-left: 10px;
   font-size: 1.1rem;
   padding: 0px 20px;
+}
+.add:hover {
+  background-color: #00b806;
+}
+.delete {
+  background-color: #db0000;
+  font-size: 1.1rem;
+}
+.delete:hover {
+  background-color: #ad0000;
+}
+.moveup,
+.movedown {
+  background-color: #00d2f7;
+  font-size: 1.1rem;
+}
+.moveup:hover,
+.movedown:hover {
+  background-color: #058ea6;
 }
 
 ol {
@@ -32,7 +57,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
+  border: 1px solid #9e9e9e;
   border-radius: 5px;
   margin: 10px 0px;
 }

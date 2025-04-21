@@ -8,6 +8,7 @@ button {
   font-size: 1.01rem;
   padding: 0 2px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 button,

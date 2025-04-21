@@ -5,9 +5,33 @@ function ToDo() {
   const [newTask, setNewTask] = useState("");
 
   const addTask = () => {
-    setTasks((tasks) => [...tasks, newTask]);
+    if (newTask) {
+      setTasks((tasks) => [...tasks, newTask]);
+    }
   };
-
+  const deleteHandeler = (index) => {
+    setTasks(tasks.filter((task, i) => index !== i));
+  };
+  const moveUp = (index) => {
+    if (index > 0) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index - 1]] = [
+        updatedTasks[index - 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  };
+  const moveDown = (index) => {
+    if (index < tasks.length - 1) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index + 1]] = [
+        updatedTasks[index + 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  };
   return (
     <div className={styles.container}>
       <h1>Todo App</h1>
@@ -24,10 +48,18 @@ function ToDo() {
         {tasks.map((task, index) => (
           <li key={index}>
             <span className={styles.text}>{task}</span>
-            <button className={styles.delete}>Delete</button>
-            <button className={styles.done}>Done!</button>
-            <button className={styles.moveup}>👆</button>
-            <button className={styles.movedown}>👇</button>
+            <button
+              className={styles.delete}
+              onClick={() => deleteHandeler(index)}
+            >
+              Delete
+            </button>
+            <button className={styles.moveup} onClick={() => moveUp(index)}>
+              👆
+            </button>
+            <button className={styles.movedown} onClick={() => moveDown(index)}>
+              👇
+            </button>
           </li>
         ))}
       </ol>
